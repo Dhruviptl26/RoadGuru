@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- User Icon -->
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/user1"
+        android:layout_marginTop="32dp"
+         />
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Welcome"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <!-- Emirates ID Label -->
+    <TextView
+        android:id="@+id/emiratesIdLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="16dp"
+        android:text="Please sign in with Phone number"
+        android:textColor="#A8A8A8"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Emirates ID Input -->
+    <EditText
+        android:id="@+id/emiratesIdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emiratesIdLabel"
+        android:layout_marginTop="16dp"
+        android:hint="Phone Number"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#A8A8A8"/>
+
+    <!-- Verify Button -->
+    <Button
+        android:id="@+id/verifyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emiratesIdInput"
+        android:layout_marginTop="16dp"
+        android:text="Verify"
+        android:backgroundTint="#3A3A3A"
+        android:textColor="#ffffff"/>
+
+    <!-- OR Divider -->
+    <TextView
+        android:id="@+id/orDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verifyButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="OR"
+        android:textColor="#A8A8A8"/>
+
+    <!-- Sign in with UAE PASS Button -->
+    <Button
+        android:id="@+id/signInWithUAEPASSButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orDivider"
+        android:layout_marginTop="16dp"
+        android:text="Sign in with Email Id"
+        android:backgroundTint="#ffffff"
+        android:textColor="#121212"
+    android:drawablePadding="12dp"/>
+
+</RelativeLayout>
