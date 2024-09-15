@@ -1,0 +1,27 @@
+<!-- res/layout/custom_action_bar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="8dp"
+    android:background="?attr/colorPrimary">
+
+    <!-- Right side: Search and User icons -->
+    <ImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/search"
+        android:contentDescription="Search Icon"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/user1"
+        android:contentDescription="User Icon"
+        android:layout_gravity="end" />
+</LinearLayout>

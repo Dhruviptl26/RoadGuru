@@ -24,7 +24,7 @@ public class splash extends AppCompatActivity {
         Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fadin);
         img.startAnimation(animZoomIn);
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(splash.this, MainActivity.class);
+            Intent intent = new Intent(splash.this, Home.class);
             startActivity(intent);
             finish();
         }, SPLASH_SCREEN_DURATION);

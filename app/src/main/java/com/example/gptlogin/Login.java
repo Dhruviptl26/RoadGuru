@@ -1,6 +1,5 @@
 package com.example.gptlogin;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.gptlogin.DatabaseHelper;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private EditText emiratesIdInput;
     private Button verifyButton, signInWithUAEPASSButton;
@@ -39,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         verifyButton.setOnClickListener(v -> {
             String emiratesId = emiratesIdInput.getText().toString();
             if (emiratesId.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Please enter Emirates ID", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Please enter Emirates ID", Toast.LENGTH_SHORT).show();
             } else {
                 // Save Emirates ID using DatabaseHelper
                 databaseHelper.addLoginInfo(emiratesId);
-                Toast.makeText(MainActivity.this, "Emirates ID saved: " + emiratesId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Emirates ID saved: " + emiratesId, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         signInWithUAEPASSButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MainActivity.this, gmail.class);
+                Intent intent=new Intent(Login.this, gmail.class);
                 startActivity(intent);
             }
         });

@@ -13,10 +13,13 @@
         android:theme="@style/Theme.Gptlogin"
         tools:targetApi="31">
         <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".gmail"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".splash"

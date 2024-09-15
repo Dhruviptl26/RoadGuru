@@ -37,7 +37,7 @@ public class gmail extends AppCompatActivity {
                 // Here you can add login logic (e.g., save Emirates ID to SharedPreferences)
                 Toast.makeText(gmail.this, "Logged in with Emirates ID: " + emiratesId, Toast.LENGTH_SHORT).show();
             }
-            Intent intent=new Intent(gmail.this, MainActivity.class);
+            Intent intent=new Intent(gmail.this, Home.class);
             startActivity(intent);
         });
 
