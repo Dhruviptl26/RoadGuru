@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <!-- UAE Pass Logo -->
+    <ImageView
+        android:id="@+id/uaePassLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/fingerlogo"
+        android:layout_gravity="center"/>
+
+    <!-- Login to UAE PASS Text -->
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login to Gmail"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <!-- Emirates ID Input -->
+    <EditText
+        android:id="@+id/emiratesIdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write Gmail Id here"
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:background="@android:color/white"
+        android:elevation="2dp"
+        android:textColor="@android:color/black"/>
+
+    <!-- Remember Me Checkbox -->
+    <CheckBox
+        android:id="@+id/rememberMeCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember me"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/black"
+        android:gravity="start"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:elevation="4dp"
+        android:padding="15dp"/>
+
+    <!-- Create and Recover Account -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don’t have a Gmail account? "
+        android:textColor="@android:color/black"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/createAccountLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new account"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/recoverAccountLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recover your account"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>

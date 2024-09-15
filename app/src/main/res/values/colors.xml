@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Primary colors for the login page -->
+    <color name="colorPrimary">#3C9B72</color> <!-- Greenish blue gradient top -->
+    <color name="colorPrimaryDark">#33996C</color> <!-- Slightly darker gradient color -->
+    <color name="colorAccent">#FF6E40</color> <!-- Accent color (e.g. for buttons) -->
+
+    <!-- Background and text colors -->
+    <color name="background">#FFFFFF</color> <!-- White background -->
+    <color name="textColorPrimary">#4A4A4A</color> <!-- Primary text color (dark grey) -->
+    <color name="textColorSecondary">#757575</color> <!-- Secondary text color (light grey) -->
+
+    <!-- Button and form field colors -->
+    <color name="buttonColor">#6F8090</color> <!-- Grey button color for login -->
+    <color name="buttonTextColor">#FFFFFF</color> <!-- White text on buttons -->
+    <color name="formFieldBorder">#CCCCCC</color> <!-- Border color for input fields -->
+
+    <!-- Checkbox colors -->
+    <color name="checkboxColor">#3C9B72</color> <!-- Greenish blue color for the checkbox -->
+    <color name="checkboxTextColor">#4A4A4A</color> <!-- Text color for "Remember me" checkbox -->
+
+    <!-- Link colors -->
+    <color name="linkColor">#3C9B72</color> <!-- Color for the "Create new account" and "Recover your account" links -->
+
+    <!-- Additional colors -->
+    <color name="errorColor">#D32F2F</color> <!-- Error color for validation messages -->
 </resources>
