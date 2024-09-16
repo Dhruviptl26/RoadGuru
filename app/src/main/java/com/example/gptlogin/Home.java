@@ -28,7 +28,7 @@ public class Home extends AppCompatActivity {
                 actionBar.setCustomView(customActionBarView);
 
                 // Set up click listeners for the icons
-                ImageView userIcon = customActionBarView.findViewById(R.id.userIcon);
+               ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
                 ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
 
                 if (userIcon != null && searchIcon != null) {
