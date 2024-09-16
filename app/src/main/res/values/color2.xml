@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="gray">#808080</color>
+    <color name="dark_gray">#A9A9A9</color>
+
+    <!-- Theme Colors -->
+    <color name="colorPrimary">#00B894</color> <!-- Dark green, similar to Police Green -->
+    <color name="colorPrimaryDark">#008E74</color> <!-- Darker shade of primary -->
+    <color name="colorAccent">#FF3B30</color> <!-- Red for emergency or accent elements -->
+
+    <!-- Button Colors -->
+    <color name="emergencyButtonColor">#E53935</color> <!-- Emergency button red -->
+    <color name="callCenterButtonColor">#43A047</color> <!-- Call center green -->
+    <color name="alAmeenButtonColor">#757575</color> <!-- Al Ameen gray -->
+
+    <!-- Background and Text Colors -->
+    <color name="backgroundColor">#000000</color> <!-- Black background -->
+    <color name="textColorPrimary">#FFFFFF</color> <!-- White text -->
+</resources>
