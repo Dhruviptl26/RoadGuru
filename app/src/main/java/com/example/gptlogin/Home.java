@@ -1,14 +1,19 @@
 package com.example.gptlogin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
 
@@ -17,6 +22,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // Set up ActionBar with custom layout
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowCustomEnabled(true);
@@ -52,5 +58,31 @@ public class Home extends AppCompatActivity {
             Toast.makeText(this, "ActionBar is null", Toast.LENGTH_SHORT).show();
         }
 
+        // Set up BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.nav_services:
+                        Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.nav_police_eye:
+                        Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.nav_901:
+                        Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.nav_more:
+                        Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 }

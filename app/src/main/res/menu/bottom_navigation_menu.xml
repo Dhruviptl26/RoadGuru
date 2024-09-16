@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_services"
+        android:title="Services" />
+<!--    android:icon="@drawable/ic_services"-->
+    <item
+        android:id="@+id/nav_police_eye"
+        android:title="Police Eye" />
+<!--    android:icon="@drawable/ic_police_eye"-->
+
+    <item
+        android:id="@+id/nav_901"
+        android:title="901" />
+<!--    android:icon="@drawable/ic_901"-->
+
+    <item
+        android:id="@+id/nav_more"
+        android:title="More" />
+<!--    android:icon="@drawable/ic_more"-->
+</menu>
