@@ -1,6 +1,4 @@
 package com.example.gptlogin;
-
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
