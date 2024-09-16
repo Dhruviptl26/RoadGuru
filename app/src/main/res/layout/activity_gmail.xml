@@ -12,7 +12,7 @@
         android:id="@+id/uaePassLogo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-       android:src="@drawable/google"
+        android:src="@drawable/google"
         android:layout_gravity="center"/>
 
     <!-- Login to UAE PASS Text -->

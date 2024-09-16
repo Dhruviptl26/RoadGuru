@@ -21,7 +21,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
         // Initialize views
         emiratesIdInput = findViewById(R.id.emiratesIdInput);
         verifyButton = findViewById(R.id.verifyButton);
@@ -31,17 +32,19 @@ public class Login extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(getApplicationContext());
 
         // Load saved Emirates ID if it exists
-        loadEmiratesId();
+        //loadEmiratesId();
 
         // Verify button click listener
         verifyButton.setOnClickListener(v -> {
             String emiratesId = emiratesIdInput.getText().toString();
             if (emiratesId.isEmpty()) {
-                Toast.makeText(Login.this, "Please enter Emirates ID", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Please enter phone no", Toast.LENGTH_SHORT).show();
             } else {
                 // Save Emirates ID using DatabaseHelper
                 databaseHelper.addLoginInfo(emiratesId);
-                Toast.makeText(Login.this, "Emirates ID saved: " + emiratesId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "phone no  saved: " + emiratesId, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Login.this, Home.class);
+                startActivity(intent);
             }
         });
 
@@ -57,11 +60,6 @@ public class Login extends AppCompatActivity {
     }
 
     // Method to load Emirates ID from the database
-    private void loadEmiratesId() {
-        String savedEmiratesId = databaseHelper.getEmiratesId();
-        if (!savedEmiratesId.isEmpty()) {
-            emiratesIdInput.setText(savedEmiratesId);
-            Toast.makeText(this, "Loaded saved Emirates ID", Toast.LENGTH_SHORT).show();
-        }
-    }
+
+}
 }
