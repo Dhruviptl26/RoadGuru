@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class gmail extends AppCompatActivity {
 
-    private EditText emiratesIdInput;
+    private EditText gmail;
     private CheckBox rememberMeCheckbox;
     private Button loginButton;
     private TextView createAccountLink, recoverAccountLink;
@@ -22,7 +22,7 @@ public class gmail extends AppCompatActivity {
         setContentView(R.layout.activity_gmail);
 
         // Initialize views
-        emiratesIdInput = findViewById(R.id.emiratesIdInput);
+        gmail = findViewById(R.id.emiratesIdInput);
         rememberMeCheckbox = findViewById(R.id.rememberMeCheckbox);
         loginButton = findViewById(R.id.loginButton);
         createAccountLink = findViewById(R.id.createAccountLink);
@@ -30,12 +30,12 @@ public class gmail extends AppCompatActivity {
 
         // Handle Login button click
         loginButton.setOnClickListener(v -> {
-            String emiratesId = emiratesIdInput.getText().toString();
+            String emiratesId = gmail.getText().toString();
             if (emiratesId.isEmpty()) {
-                Toast.makeText(gmail.this, "Please enter Emirates ID", Toast.LENGTH_SHORT).show();
+                Toast.makeText(gmail.this, "Please enter Gamil ", Toast.LENGTH_SHORT).show();
             } else {
                 // Here you can add login logic (e.g., save Emirates ID to SharedPreferences)
-                Toast.makeText(gmail.this, "Logged in with Emirates ID: " + emiratesId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(gmail.this, "Logged in with Gmail: " + emiratesId, Toast.LENGTH_SHORT).show();
             }
             Intent intent=new Intent(gmail.this, Home.class);
             startActivity(intent);
