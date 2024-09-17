@@ -34,7 +34,7 @@ public class Home extends AppCompatActivity {
                 actionBar.setCustomView(customActionBarView);
 
                 // Set up click listeners for the icons
-               ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
+                ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
                 ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
 
                 if (userIcon != null && searchIcon != null) {
@@ -57,32 +57,59 @@ public class Home extends AppCompatActivity {
         } else {
             Toast.makeText(this, "ActionBar is null", Toast.LENGTH_SHORT).show();
         }
-
-        // Set up BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_services:
-                        Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_police_eye:
-                        Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_901:
-                        Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_more:
-                        Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
-                        return true;
+                if (item.getItemId() == R.id.nav_home) {
+                    Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_services) {
+                    Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_police_eye) {
+                    Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_901) {
+                    Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_more) {
+                    Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
+                    return true;
+                } else {
+                    Toast.makeText(Home.this, "Unknown item selected", Toast.LENGTH_SHORT).show();
+                    return false;
                 }
-                return false;
             }
         });
     }
 }
+
+        // Set up BottomNavigationView
+//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @SuppressLint("NonConstantResourceId")
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.nav_home:
+//                        Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
+//                        return true;
+//                    case R.id.nav_services:
+//                        Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
+//                        return true;
+//                    case R.id.nav_police_eye:
+//                        Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
+//                        return true;
+//                    case R.id.nav_901:
+//                        Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
+//                        return true;
+//                    case R.id.nav_more:
+//                        Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
+//    }
+//}

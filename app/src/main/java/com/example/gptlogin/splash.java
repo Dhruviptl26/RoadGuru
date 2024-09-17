@@ -18,6 +18,9 @@ public class splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
         img = (ImageView)findViewById(R.id.imageView);
@@ -29,4 +32,4 @@ public class splash extends AppCompatActivity {
             finish();
         }, SPLASH_SCREEN_DURATION);
     }
-}
+}}

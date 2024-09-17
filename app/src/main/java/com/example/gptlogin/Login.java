@@ -16,9 +16,11 @@ public class Login extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().hide();}
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -37,11 +39,11 @@ public class Login extends AppCompatActivity {
         verifyButton.setOnClickListener(v -> {
             String emiratesId = emiratesIdInput.getText().toString();
             if (emiratesId.isEmpty()) {
-                Toast.makeText(Login.this, "Please enter Emirates ID", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Please enter Phone Number", Toast.LENGTH_SHORT).show();
             } else {
                 // Save Emirates ID using DatabaseHelper
                 databaseHelper.addLoginInfo(emiratesId);
-                Toast.makeText(Login.this, "Emirates ID saved: " + emiratesId, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Phone Number saved: " + emiratesId, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -61,7 +63,7 @@ public class Login extends AppCompatActivity {
         String savedEmiratesId = databaseHelper.getEmiratesId();
         if (!savedEmiratesId.isEmpty()) {
             emiratesIdInput.setText(savedEmiratesId);
-            Toast.makeText(this, "Loaded saved Emirates ID", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Phone Number Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }
