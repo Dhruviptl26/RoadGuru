@@ -1,6 +1,5 @@
 package com.example.gptlogin;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -39,12 +38,14 @@ public class Home extends AppCompatActivity {
 
                 if (userIcon != null && searchIcon != null) {
                     // Handle user icon click
-                    userIcon.setOnClickListener(v -> {
-                        Intent intent = new Intent(Home.this, Login.class);
-                        startActivity(intent);
+                    userIcon.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Home.this, Login.class);
+                            startActivity(intent);
+                        }
                     });
 
-                    // Handle search icon click
                     searchIcon.setOnClickListener(v -> {
                         Toast.makeText(Home.this, "Search icon clicked", Toast.LENGTH_SHORT).show();
                     });
@@ -57,6 +58,8 @@ public class Home extends AppCompatActivity {
         } else {
             Toast.makeText(this, "ActionBar is null", Toast.LENGTH_SHORT).show();
         }
+
+        // Set up BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -67,11 +70,10 @@ public class Home extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_services) {
                     Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
                     return true;
-                } else if (item.getItemId() == R.id.nav_police_eye) {
-                    Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
-                    return true;
                 } else if (item.getItemId() == R.id.nav_901) {
-                    Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
+
+                    Intent intent=new Intent(Home.this, call.class);
+                    startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_more) {
                     Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
@@ -84,32 +86,3 @@ public class Home extends AppCompatActivity {
         });
     }
 }
-
-        // Set up BottomNavigationView
-//        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @SuppressLint("NonConstantResourceId")
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                switch (item.getItemId()) {
-//                    case R.id.nav_home:
-//                        Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
-//                        return true;
-//                    case R.id.nav_services:
-//                        Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
-//                        return true;
-//                    case R.id.nav_police_eye:
-//                        Toast.makeText(Home.this, "Police Eye selected", Toast.LENGTH_SHORT).show();
-//                        return true;
-//                    case R.id.nav_901:
-//                        Toast.makeText(Home.this, "901 selected", Toast.LENGTH_SHORT).show();
-//                        return true;
-//                    case R.id.nav_more:
-//                        Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
-//                        return true;
-//                }
-//                return false;
-//            }
-//        });
-//    }
-//}
