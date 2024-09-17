@@ -8,14 +8,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-public class Login extends AppCompatActivity {
-
+public class Login extends AppCompatActivity
+{
     private EditText emiratesIdInput;
     private Button verifyButton, signInWithUAEPASSButton;
     private DatabaseHelper databaseHelper;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
