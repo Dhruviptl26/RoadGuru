@@ -33,14 +33,14 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="901"
+        android:layout_marginTop="50dp"
+        android:text="112"
         android:textColor="@android:color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/sos_button"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sos_button" />
 
     <TextView
         android:id="@+id/subtitle"
@@ -72,9 +72,9 @@
             android:id="@+id/call_emergency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="999 For Emergencies"
             android:backgroundTint="@android:color/holo_red_light"
-            android:textColor="@android:color/white"/>
+            android:text="100 For Emergencies"
+            android:textColor="@android:color/white" />
         <!--            android:drawableLeft="@drawable/call_icon" />-->
 
         <!-- Call Center Button -->
@@ -82,21 +82,13 @@
             android:id="@+id/call_center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="901 Call Center"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@android:color/holo_green_dark"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="16dp"/>
+            android:text="108 Ambulance"
+            android:textColor="@android:color/white" />
         <!--        android:drawableLeft="@drawable/call_icon" />-->
 
         <!-- Al Ameen Button -->
-        <Button
-            android:id="@+id/al_ameen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Al Ameen"
-            android:backgroundTint="@android:color/darker_gray"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="16dp"/>
         <!--android:drawableLeft="@drawable/link_icon" />-->
     </LinearLayout>
 

@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
+        android:icon="@drawable/home"
         android:title="Home" />
-<!--    android:icon="@drawable/home"-->
 
     <item
         android:id="@+id/nav_services"
@@ -12,11 +12,11 @@
 
     <item
         android:id="@+id/nav_901"
-        android:title="901" />
-<!--    android:icon="@drawable/police"-->
+        android:icon="@drawable/police"
+        android:title="112" />
 
     <item
         android:id="@+id/nav_more"
+        android:icon="@drawable/more"
         android:title="More" />
-<!--    android:icon="@drawable/more"-->
 </menu>
