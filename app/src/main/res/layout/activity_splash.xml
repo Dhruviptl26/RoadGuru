@@ -5,16 +5,25 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splash"
-    android:background="@android:color/widget_edittext_dark">
-
+    tools:context=".splash">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/iv"
+    android:scaleType="centerCrop"
+    android:src="@drawable/first"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true" />
+<!--    <VideoView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/vv"-->
+<!--        android:layout_centerInParent="true"/>-->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="397dp"
-        android:layout_height="381dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="314dp"
-        android:layout_marginEnd="7dp"
-        android:src="@drawable/roadguru" />
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/road"
+        android:layout_centerInParent="true" />
+
 </RelativeLayout>
