@@ -88,17 +88,16 @@ public class Home extends AppCompatActivity
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nav_home) {
-                    Toast.makeText(Home.this, "Home selected", Toast.LENGTH_SHORT).show();
                     return true;
-                } else if (item.getItemId() == R.id.nav_services) {
-                    Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
+                } else if (item.getItemId() == R.id.nav_services) {Toast.makeText(Home.this, "Services selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Home.this, service.class);
+                    startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_901) {
                     Intent intent = new Intent(Home.this, call.class);
                     startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_more) {
-                    Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
                     return true;
                 } else {
                     Toast.makeText(Home.this, "Unknown item selected", Toast.LENGTH_SHORT).show();
