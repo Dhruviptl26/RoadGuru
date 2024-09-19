@@ -16,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="16dp" />
-    <!--        android:src="@drawable/sos_icon"-->
 
     <!-- Status Icon -->
     <ImageView
@@ -26,7 +25,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp" />
-    <!--    android:src="@drawable/status_icon"-->
 
     <!-- 901 Call Center Section -->
     <TextView
@@ -75,7 +73,6 @@
             android:backgroundTint="@android:color/holo_red_light"
             android:text="100 For Emergencies"
             android:textColor="@android:color/white" />
-        <!--            android:drawableLeft="@drawable/call_icon" />-->
 
         <!-- Call Center Button -->
         <Button
@@ -86,10 +83,17 @@
             android:backgroundTint="@android:color/holo_green_dark"
             android:text="108 Ambulance"
             android:textColor="@android:color/white" />
-        <!--        android:drawableLeft="@drawable/call_icon" />-->
-
-        <!-- Al Ameen Button -->
-        <!--android:drawableLeft="@drawable/link_icon" />-->
     </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
