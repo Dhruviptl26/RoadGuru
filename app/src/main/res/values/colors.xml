@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Primary colors for the login page -->
+    <!-- Primary colors for the app -->
     <color name="colorPrimary">#3C9B72</color> <!-- Greenish blue gradient top -->
     <color name="colorPrimaryDark">#33996C</color> <!-- Slightly darker gradient color -->
-    <color name="colorAccent">#FF6E40</color> <!-- Accent color (e.g. for buttons) -->
+    <color name="colorAccent">#FF6E40</color> <!-- Accent color (e.g., for buttons) -->
 
     <!-- Background and text colors -->
     <color name="background">#FFFFFF</color> <!-- White background -->
@@ -24,4 +24,22 @@
 
     <!-- Additional colors -->
     <color name="errorColor">#D32F2F</color> <!-- Error color for validation messages -->
+
+    <!-- App-specific colors for the home page -->
+    <color name="textColorHighlight">#00C853</color> <!-- Bright green for highlighting important text (e.g., "Request for Lost") -->
+    <color name="bottomNavBackground">#000000</color> <!-- Black background for bottom navigation -->
+    <color name="bottomNavIconActive">#00C853</color> <!-- Active bright green icon -->
+    <color name="bottomNavIconInactive">#B0B0B0</color> <!-- Inactive light gray icon -->
+
+    <!-- Colors for ActionBar customization -->
+    <color name="actionBarBackground">#000000</color> <!-- Black ActionBar background -->
+    <color name="actionBarIconColor">#00C853</color> <!-- Green icons in ActionBar -->
+
+    <!-- Input field colors for home screen -->
+    <color name="editTextBackground">#333333</color> <!-- Dark gray background for input fields -->
+    <color name="editTextTextColor">#FFFFFF</color> <!-- White text in input fields -->
+
+    <!-- Miscellaneous -->
+    <color name="dividerColor">#4D4D4D</color> <!-- Divider lines in gray -->
+    <color name="backgroundColor">#121212</color> <!-- Dark background color for the app -->
 </resources>
