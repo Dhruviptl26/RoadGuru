@@ -12,7 +12,65 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@android:color/white" />
+        android:background="@android:color/white" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp">
+<!--            android:background="@drawable/card_background"-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fine Payment"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_margin="16dp"/>
+
+            <Button
+                android:id="@+id/searchFineButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="16dp"/>
+<!--            android:backgroundTint="@color/green"-->
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+<!--            android:background="@drawable/card_background"-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Application Status"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_margin="16dp"/>
+
+            <EditText
+                android:id="@+id/referenceNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert reference number"
+                android:layout_marginEnd="40dp"
+                android:layout_margin="16dp"/>
+
+            <Button
+                android:id="@+id/submitReference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="->"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="16dp"
+                />
+<!--            android:backgroundTint="@color/green"-->
+        </RelativeLayout>
+    </FrameLayout>
+
 
     <!-- BottomNavigationView at the bottom of the layout -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
