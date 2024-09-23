@@ -41,5 +41,6 @@
 
     <!-- Miscellaneous -->
     <color name="dividerColor">#4D4D4D</color> <!-- Divider lines in gray -->
-    <color name="backgroundColor">#121212</color> <!-- Dark background color for the app -->
+    <color name="backgroundColor">#121212</color>
+    <color name="green">Green</color> <!-- Dark background color for the app -->
 </resources>

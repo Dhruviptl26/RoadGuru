@@ -5,72 +5,102 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:layout_marginTop="16dp">
-<!--            android:background="@drawable/card_background"-->
+            <!-- First RelativeLayout for Fine Payment -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fine Payment"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:layout_margin="16dp"/>
+            <!-- Second RelativeLayout for Application Status -->
 
-            <Button
-                android:id="@+id/searchFineButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Search"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="16dp"/>
-<!--            android:backgroundTint="@color/green"-->
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-<!--            android:background="@drawable/card_background"-->
+            <RelativeLayout
+                android:layout_width="364dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/round_rect">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Application Status"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:layout_margin="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Fine Payment"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/referenceNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Insert reference number"
-                android:layout_marginEnd="40dp"
-                android:layout_margin="16dp"/>
+                <!-- This TextView is positioned below the "Fine Payment" -->
 
-            <Button
-                android:id="@+id/submitReference"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="->"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="16dp"
-                />
-<!--            android:backgroundTint="@color/green"-->
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/searchFineDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/searchFineButton"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Search and pay for traffic fine"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
+                <Button
+                    android:id="@+id/searchFineButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="16dp"
+                    android:text="Search" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="358dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_rect">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="16dp"
+                    android:text="Application Status"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/submitReference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="16dp"
+                    android:text="Enter" />
+
+                <EditText
+                    android:id="@+id/referenceNumber"
+                    android:layout_width="246dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Insert reference number" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- BottomNavigationView at the bottom of the layout -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>
