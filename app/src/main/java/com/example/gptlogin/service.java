@@ -39,8 +39,8 @@ public class service extends AppCompatActivity {
                         Intent intent = new Intent(service.this, Home.class);
                         startActivity(intent);
                         return true;
-                    } else if (item.getItemId() == R.id.nav_services) {
-
+                    } else if (item.getItemId() == R.id.nav_services)
+                    {
                         return true;
                     } else if (item.getItemId() == R.id.nav_901) {
                         Intent intent = new Intent(service.this, call.class);
