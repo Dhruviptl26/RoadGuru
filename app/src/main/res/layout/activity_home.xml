@@ -69,7 +69,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_margin="16dp"
-                    android:text="Application Status"
+                    android:text="Enter Car Number"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 

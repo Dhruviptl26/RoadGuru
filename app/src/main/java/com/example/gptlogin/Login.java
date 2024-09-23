@@ -15,8 +15,6 @@ public class Login extends AppCompatActivity {
     private Button verifyButton, signInWithUAEPASSButton;
     private DatabaseHelper databaseHelper;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

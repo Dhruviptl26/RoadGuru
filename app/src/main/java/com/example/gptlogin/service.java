@@ -12,8 +12,8 @@ import androidx.gridlayout.widget.GridLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class service extends AppCompatActivity {
-
+public class service extends AppCompatActivity
+{
     private GridLayout serviceGrid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
-            android:text="Service"
+            android:text="Traffic Service"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -85,7 +85,7 @@
                     android:id="@+id/service_icon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/student" />
+                    android:src="@drawable/fin" />
 
                 <TextView
                     android:id="@+id/service_name"
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:paddingTop="8dp"
-                    android:text="Child and women safety"
+                    android:text="Fine Inquiry and Payment"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -110,7 +110,7 @@
                     android:id="@+id/ac"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/accident" />
+                    android:src="@drawable/ac" />
 
                 <TextView
                     android:id="@+id/serv"
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:paddingTop="8dp"
-                    android:text="Student awareness"
+                    android:text="Simple Accident"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>

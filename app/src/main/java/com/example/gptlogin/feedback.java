@@ -3,6 +3,7 @@ package com.example.gptlogin;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class feedback extends AppCompatActivity {
     private EditText nameEditText, mobileEditText, emailEditText, subjectEditText, descriptionEditText;
-    private Button submitButton;
+    private Button submitButton,homebtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,7 +29,14 @@ public class feedback extends AppCompatActivity {
         subjectEditText = findViewById(R.id.subjectEditText);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         submitButton = findViewById(R.id.submitButton);
-
+homebtn=(Button)findViewById(R.id.btn);
+homebtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent intent=new Intent(feedback.this, Home.class);
+        startActivity(intent);
+    }
+});
         // Set onClickListener for submit button
         submitButton.setOnClickListener(view -> submitFeedback());
     }
