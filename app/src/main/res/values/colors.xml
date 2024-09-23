@@ -41,6 +41,27 @@
 
     <!-- Miscellaneous -->
     <color name="dividerColor">#4D4D4D</color> <!-- Divider lines in gray -->
-    <color name="backgroundColor">#121212</color>
-    <color name="green">Green</color> <!-- Dark background color for the app -->
+    <color name="backgroundColor">#121212</color> <!-- Dark background color for the app -->
+    <!-- Primary theme colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_gray">#333333</color>
+    <color name="gray">#808080</color>
+
+    <!-- Accent colors for icons and highlights -->
+    <color name="accent_green">#00C853</color> <!-- For success icons or accents -->
+    <color name="accent_red">#D32F2F</color>   <!-- For error markers like the asterisks -->
+
+    <!-- Text colors -->
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#BDBDBD</color>
+
+    <!-- Input field background -->
+    <color name="edit_text_background">#424242</color>
+
+    <!-- Button background -->
+    <color name="button_background">#3E3E3E</color>
+
+    <!-- Feedback form label colors -->
+    <color name="label_color">#A5A5A5</color>
 </resources>
