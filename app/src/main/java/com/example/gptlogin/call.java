@@ -3,7 +3,6 @@ package com.example.gptlogin;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
@@ -52,7 +51,8 @@ public class call extends AppCompatActivity {
                     } else if (item.getItemId() == R.id.nav_901) {
                         return true;
                     } else if (item.getItemId() == R.id.nav_more) {
-                        //Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(call.this, feedback.class);
+                        startActivity(intent);
                         return true;
                     } else {
                         Toast.makeText(call.this, "Unknown item selected", Toast.LENGTH_SHORT).show();

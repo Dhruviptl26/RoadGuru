@@ -28,12 +28,13 @@
         android:id="@+id/feedbackInstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:drawableLeft="@drawable/baseline_edit_note_24"
         android:text="Please take a moment to provide us with your feedback!"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/submitFeedbackTitle"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="6dp" />
+        tools:layout_editor_absoluteX="3dp" />
 
     <EditText
         android:id="@+id/nameEditText"
@@ -43,7 +44,7 @@
         android:drawableLeft="@drawable/baseline_person_24"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -58,7 +59,7 @@
         android:drawableLeft="@drawable/baseline_phone_android_24"
         android:hint="Mobile Number"
         android:inputType="phone"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -73,7 +74,7 @@
         android:drawableLeft="@drawable/baseline_email_24"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -88,7 +89,7 @@
         android:drawableLeft="@drawable/baseline_subject_24"
         android:hint="Subject"
         android:inputType="text"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -105,7 +106,7 @@
         android:hint="Type the description here"
         android:inputType="textMultiLine"
         android:lines="4"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -119,8 +120,9 @@
         android:layout_marginBottom="84dp"
         android:backgroundTint="@color/dark_gray"
         android:text="Submit"
-        android:textColor="@color/white"
+        android:textColor="@color/text_white"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

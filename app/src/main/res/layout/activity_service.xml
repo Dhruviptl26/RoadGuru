@@ -12,10 +12,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:title="Your Title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Services"
         app:titleTextColor="@android:color/white" />
 
     <!-- Content Section with rounded background -->
@@ -24,15 +24,15 @@
 
     <LinearLayout
         android:id="@+id/content_layout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_width="398dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/round_rect"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -62,19 +62,24 @@
             android:id="@+id/service_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="16dp"
             app:columnCount="3"
             app:rowCount="4">
+            <!-- Your child views here -->
 
-            <!-- First Service Item -->
+
+
+        <!-- First Service Item -->
+
+            <!-- Second Service Item -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp"
+                app:layout_column="0"
+                app:layout_row="0">
 
                 <ImageView
                     android:id="@+id/service_icon"
@@ -93,7 +98,6 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Second Service Item -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-import androidx.gridlayout.widget.GridLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -99,6 +97,8 @@ public class Home extends AppCompatActivity
                     startActivity(intent);
                     return true;
                 } else if (item.getItemId() == R.id.nav_more) {
+                    Intent intent = new Intent(Home.this, feedback.class);
+                    startActivity(intent);
                     return true;
                 } else {
                     Toast.makeText(Home.this, "Unknown item selected", Toast.LENGTH_SHORT).show();

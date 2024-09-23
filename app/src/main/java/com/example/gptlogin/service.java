@@ -3,16 +3,12 @@ package com.example.gptlogin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.gridlayout.widget.GridLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -22,10 +18,12 @@ public class service extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_service);
         EdgeToEdge.enable(this);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
-            setContentView(R.layout.activity_service);
+
              serviceGrid = findViewById(R.id.service_grid);
             //setupGridItems();
 
@@ -47,7 +45,8 @@ public class service extends AppCompatActivity {
                         startActivity(intent);
                         return true;
                     } else if (item.getItemId() == R.id.nav_more) {
-                        //Toast.makeText(Home.this, "More selected", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(service.this, feedback.class);
+                        startActivity(intent);
                         return true;
                     } else {
                         Toast.makeText(service.this, "Unknown item selected", Toast.LENGTH_SHORT).show();
@@ -56,5 +55,13 @@ public class service extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public GridLayout getServiceGrid() {
+        return serviceGrid;
+    }
+
+    public void setServiceGrid(GridLayout serviceGrid) {
+        this.serviceGrid = serviceGrid;
     }
 }
