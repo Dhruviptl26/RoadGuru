@@ -1,10 +1,12 @@
 package com.example.gptlogin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,27 +45,37 @@ public class Home extends AppCompatActivity
                 actionBar.setCustomView(customActionBarView);
 
                 // Set up click listeners for the icons
-                ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
-                ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
 
-                if (userIcon != null && searchIcon != null) {
-                    // Handle user icon click
-                    userIcon.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(Home.this, Login.class);
-                            startActivity(intent);
-                        }
-                    });
+                    ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
+                    ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
 
-                    searchIcon.setOnClickListener(v ->
-                    {
-                        Toast.makeText(Home.this, "Search icon clicked", Toast.LENGTH_SHORT).show();
-                    });
-                } else {
-                    Toast.makeText(this, "Icons not found", Toast.LENGTH_SHORT).show();
+                    if (userIcon != null && searchIcon != null) {
+                        // Handle user icon click
+                        userIcon.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                SharedPreferences sharedPreferences = getSharedPreferences("userDetails", MODE_PRIVATE);
+                                boolean isLoogedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+                                if (isLoogedIn) {
+                                    Intent intent = new Intent(Home.this, UserDetails.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Intent intent = new Intent(Home.this, Login.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                        searchIcon.setOnClickListener(v ->
+                        {
+                            Toast.makeText(Home.this, "Search icon clicked", Toast.LENGTH_SHORT).show();
+                        });
+                    } else {
+                        Toast.makeText(this, "Icons not found", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            } else {
+            else {
                 Toast.makeText(this, "Failed to inflate custom action bar", Toast.LENGTH_SHORT).show();
             }
         } else {

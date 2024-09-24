@@ -29,7 +29,7 @@ public class feedback extends AppCompatActivity {
         subjectEditText = findViewById(R.id.subjectEditText);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         submitButton = findViewById(R.id.submitButton);
-homebtn=(Button)findViewById(R.id.btn);
+homebtn=(Button)findViewById(R.id.btn1);
 homebtn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
