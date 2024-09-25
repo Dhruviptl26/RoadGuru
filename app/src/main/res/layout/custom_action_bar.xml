@@ -7,8 +7,6 @@
     android:padding="8dp">
 
     <!-- First User Icon on the left -->
-
-
     <View
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,6 +18,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:contentDescription="Search Icon"
+        android:src="@drawable/search"
         android:layout_gravity="end"
         android:layout_marginEnd="16dp" />
 

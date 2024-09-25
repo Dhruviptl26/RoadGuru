@@ -15,6 +15,7 @@ public class Login extends AppCompatActivity {
     private EditText phoneNo;
     private Button verifyButton, signInWithEmail;
     private DatabaseHelper databaseHelper;
+    String emiratesId;
     SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class Login extends AppCompatActivity {
             // Verify button click listener
             sp=getSharedPreferences("user_details",MODE_PRIVATE);
             verifyButton.setOnClickListener(v -> {
-                String emiratesId = phoneNo.getText().toString();
+                emiratesId = phoneNo.getText().toString();
                 if (emiratesId.isEmpty()) {
 
                     Toast.makeText(Login.this, "Please enter phone no", Toast.LENGTH_SHORT).show();
@@ -73,8 +74,6 @@ public class Login extends AppCompatActivity {
             });
 
         }
-
-        // Method to load Emirates ID from the database
 
     }
 }

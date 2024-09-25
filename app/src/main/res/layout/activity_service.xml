@@ -26,13 +26,13 @@
         android:id="@+id/content_layout"
         android:layout_width="398dp"
         android:layout_height="256dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/round_rect"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -67,13 +67,12 @@
             <!-- Your child views here -->
 
 
-
-        <!-- First Service Item -->
+            <!-- First Service Item -->
 
             <!-- Second Service Item -->
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="174dp"
+                android:layout_height="123dp"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -83,28 +82,30 @@
 
                 <ImageView
                     android:id="@+id/service_icon"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="55dp"
+                    android:layout_height="73dp"
                     android:src="@drawable/fin" />
 
                 <TextView
                     android:id="@+id/service_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
                     android:gravity="center"
                     android:paddingTop="8dp"
-                    android:text="Fine Inquiry and Payment"
+                    android:text="fine Inquiry"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="158dp"
+                android:layout_height="128dp"
                 android:layout_margin="8dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp"
+                app:layout_column="1"
+                app:layout_row="0">
 
                 <ImageView
                     android:id="@+id/ac"
@@ -132,8 +133,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
+        app:itemRippleColor="#3c9b72"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
