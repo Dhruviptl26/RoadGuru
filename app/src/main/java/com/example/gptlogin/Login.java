@@ -16,13 +16,13 @@ public class Login extends AppCompatActivity {
     private Button verifyButton, signInWithEmail;
     private DatabaseHelper databaseHelper;
     String emiratesId;
-    SharedPreferences sp;
+   private SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedPreferences sharedPreferences = getSharedPreferences("userDetails", MODE_PRIVATE);
-        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        SharedPreferences sp = getSharedPreferences("userDetails", MODE_PRIVATE);
+        boolean isLoggedIn = sp.getBoolean("isLoggedIn", false);
 
         if (isLoggedIn) {
             // User is already logged in, redirect to UserDetails activity
@@ -31,8 +31,7 @@ public class Login extends AppCompatActivity {
             finish();  // Prevent going back to the login screen
             return;  // Stop further execution of onCreate
         }
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
             // Initialize views
             phoneNo = findViewById(R.id.emiratesIdInput);
             verifyButton = findViewById(R.id.verifyButton);
@@ -42,11 +41,13 @@ public class Login extends AppCompatActivity {
             databaseHelper = new DatabaseHelper(getApplicationContext());
 
             // Load saved Emirates ID if it exists
-            //loadEmiratesId();
+        loadPhoneNumber();
 
             // Verify button click listener
-            sp=getSharedPreferences("user_details",MODE_PRIVATE);
-            verifyButton.setOnClickListener(v -> {
+            sp=getSharedPreferences("userDetails",MODE_PRIVATE);
+        SharedPreferences finalSp = sp;
+        SharedPreferences finalSp1 = sp;
+        verifyButton.setOnClickListener(v -> {
                 emiratesId = phoneNo.getText().toString();
                 if (emiratesId.isEmpty()) {
 
@@ -54,7 +55,7 @@ public class Login extends AppCompatActivity {
                 } else {
                     // Save Emirates ID using DatabaseHelper
                     databaseHelper.addLoginInfo(emiratesId);
-                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    SharedPreferences.Editor editor= finalSp1.edit();
                     editor.putString("phoneNumber",emiratesId);
                     editor.putBoolean("isLoggedIn",true);
                     editor.apply();
@@ -65,15 +66,22 @@ public class Login extends AppCompatActivity {
             });
 
             // Sign in with UAE PASS button click listener
-            signInWithEmail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(Login.this, gmail.class);
-                    startActivity(intent);
-                }
-            });
+           signInWithEmail.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
 
+                   Intent intent=new Intent(Login.this, gmail.class);
+                   startActivity(intent);
+               }
+           });
+
+
+    }
+
+    private void loadPhoneNumber() {
+        String savedPhoneNumber = databaseHelper.getPhoneNumber();
+        if (savedPhoneNumber != null && !savedPhoneNumber.isEmpty()) {
+            phoneNo.setText(savedPhoneNumber);
         }
-
     }
 }

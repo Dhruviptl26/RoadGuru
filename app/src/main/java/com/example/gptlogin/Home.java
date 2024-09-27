@@ -20,7 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity
 {
-    private Button searchFineBtn;
+    private Button searchFineBtn,submitReference;
     private EditText referenceNumber;
 
 
@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        submitReference  = findViewById(R.id.submitReference);
         searchFineBtn = findViewById(R.id.searchFineButton);
         referenceNumber = findViewById(R.id.referenceNumber);
 
@@ -87,6 +87,15 @@ public class Home extends AppCompatActivity
             String refNum = referenceNumber.getText().toString();
             if (refNum.isEmpty()) {
                 Toast.makeText(Home.this, "Please insert a reference number", Toast.LENGTH_SHORT).show();
+            } else {
+                // Logic for searching fines with the reference number
+                Toast.makeText(Home.this, "Searching fines for reference: " + refNum, Toast.LENGTH_SHORT).show();
+            }
+        });
+        submitReference.setOnClickListener(v -> {
+            String refNum = referenceNumber.getText().toString();
+            if (refNum.isEmpty()) {
+                Toast.makeText(Home.this, "Please insert a car number", Toast.LENGTH_SHORT).show();
             } else {
                 // Logic for searching fines with the reference number
                 Toast.makeText(Home.this, "Searching fines for reference: " + refNum, Toast.LENGTH_SHORT).show();

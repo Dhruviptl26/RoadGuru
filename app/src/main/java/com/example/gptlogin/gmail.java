@@ -22,8 +22,7 @@ public class gmail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gmail);
         //  setContentView(R.layout.activity_home);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
             // Set up ActionBar with custom layout
 
             // Initialize views
@@ -60,5 +59,5 @@ public class gmail extends AppCompatActivity {
             });
 
         }
-    }
+
 }

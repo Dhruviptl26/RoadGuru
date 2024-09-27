@@ -2,30 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:gravity="center_vertical"
+    android:orientation="horizontal"
     android:padding="8dp">
 
-    <!-- Spacer View on the left to push icons to the right -->
+    <!-- Logo Icon at the start -->
+    <ImageView
+        android:id="@+id/searchIcon1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="Logo Icon"
+        android:src="@drawable/logo" /> <!-- Ensure this is the correct logo drawable -->
+
+    <!-- Spacer View to push search and user icons to the end -->
     <View
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1" /> <!-- This will push the following icons to the right -->
 
     <!-- Search Icon -->
     <ImageView
         android:id="@+id/searchIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:contentDescription="Search Icon"
-        android:src="@drawable/search"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginEnd="16dp"
+    android:contentDescription="Search Icon"
+    android:src="@drawable/search" />
 
-    <!-- User Icon -->
     <ImageView
         android:id="@+id/lastUserIcon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/user1"
-        android:contentDescription="Last User Icon" />
+        android:contentDescription="Last User Icon"
+        android:src="@drawable/user1" />
 </LinearLayout>
