@@ -1,0 +1,13 @@
+<resources>
+    <!-- Theme with ActionBar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+
+    </style>
+
+    <!-- Theme without ActionBar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+</resources>

@@ -19,8 +19,6 @@ public class feedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();}
 
         // Initialize views
         nameEditText = findViewById(R.id.nameEditText);

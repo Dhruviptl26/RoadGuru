@@ -2,15 +2,11 @@ package com.example.gptlogin;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.MediaController;
-import android.widget.VideoView;
-import androidx.gridlayout.widget.GridLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,8 +17,7 @@ public class splash extends AppCompatActivity {
     @SuppressLint({"ResourceType", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
             super.onCreate(savedInstanceState);
             EdgeToEdge.enable(this);
             setContentView(R.layout.activity_splash);
@@ -43,5 +38,5 @@ public class splash extends AppCompatActivity {
                 finish();
             }, SPLASH_SCREEN_DURATION);
         }
-    }
+
 }

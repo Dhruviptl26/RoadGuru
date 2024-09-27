@@ -3,8 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/first">
 
+    <!-- Toolbar -->
+
+    <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,17 +17,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp"> <!-- Adding padding for inner content -->
 
-            <!-- First RelativeLayout for Fine Payment -->
-
-            <!-- Second RelativeLayout for Application Status -->
-
+            <!-- Fine Payment Section -->
             <RelativeLayout
-                android:layout_width="364dp"
-                android:layout_height="124dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginStart="25dp"
                 android:background="@drawable/round_rect">
 
                 <TextView
@@ -34,13 +35,11 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <!-- This TextView is positioned below the "Fine Payment" -->
-
                 <TextView
                     android:id="@+id/searchFineDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/searchFineButton"
+                    android:layout_below="@+id/searchFineButton"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="5dp"
                     android:text="Search and pay for traffic fine"
@@ -58,58 +57,62 @@
                     android:textColorLink="#3c9b72" />
             </RelativeLayout>
 
+            <!-- Enter Car Number Section -->
             <RelativeLayout
-                android:layout_width="358dp"
-                android:layout_height="144dp"
-                android:layout_marginStart="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="169dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/round_rect">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
                     android:layout_margin="16dp"
                     android:text="Enter Car Number"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <Button
-                    android:id="@+id/submitReference"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="16dp"
-                    android:backgroundTint="#3C9B72"
-                    android:backgroundTintMode="screen"
-                    android:text="Enter"
-                    android:textColorLink="@color/accent_green"
-                    app:strokeColor="@color/accent_green" />
-
                 <EditText
                     android:id="@+id/referenceNumber"
-                    android:layout_width="246dp"
-                    android:layout_height="55dp"
+                    android:layout_width="224dp"
+                    android:layout_height="59dp"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="22dp"
                     android:hint="Insert reference number"
-                    android:textColor="@color/black"
-                    android:textColorLink="#3c9b72" />
+                    android:textAppearance="@android:style/Theme.Black"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/submitReference"
+                    android:layout_width="99dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/referenceNumber"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_toEndOf="@+id/referenceNumber"
+                    android:backgroundTint="#3C9B72"
+                    android:text="Enter" />
             </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <!-- BottomNavigationView at the bottom of the layout -->
+    <!-- BottomNavigationView -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#fffafa"
+        app:itemIconTint="#3c9b72"
         app:itemRippleColor="#3c9b72"
+        app:itemTextColor="@color/black"
         app:menu="@menu/bottom_navigation_menu" />
 
 </LinearLayout>

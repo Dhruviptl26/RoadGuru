@@ -17,8 +17,7 @@ public class call extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
             Button callEmergencyButton = findViewById(R.id.call_emergency);
             Button callCenterButton = findViewById(R.id.call_center);
             // Button alAmeenButton = findViewById(R.id.al_ameen);
@@ -68,7 +67,7 @@ public class call extends AppCompatActivity {
 //        });
 
             });
-        };
+
     }
 }
 

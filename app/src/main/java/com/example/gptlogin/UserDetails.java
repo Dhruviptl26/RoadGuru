@@ -1,5 +1,6 @@
 package com.example.gptlogin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,15 +17,13 @@ public class UserDetails extends AppCompatActivity {
     Button Logout;
     TextView tv;
     ImageView img;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_user_details);
         SharedPreferences sp = getSharedPreferences("userDetails", MODE_PRIVATE);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
         img=(ImageView)findViewById(R.id.img);
         tv = (TextView) findViewById(R.id.textView3);
         String num = sp.getString("phoneNumber", "num");

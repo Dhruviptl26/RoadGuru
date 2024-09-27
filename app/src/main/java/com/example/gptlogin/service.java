@@ -21,8 +21,6 @@ public class service extends AppCompatActivity
         setContentView(R.layout.activity_service);
         EdgeToEdge.enable(this);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
 
              serviceGrid = findViewById(R.id.service_grid);
             //setupGridItems();
@@ -54,7 +52,7 @@ public class service extends AppCompatActivity
                     }
                 }
             });
-        }
+
     }
 
     public GridLayout getServiceGrid() {
