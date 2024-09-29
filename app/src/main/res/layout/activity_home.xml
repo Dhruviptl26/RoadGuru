@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -78,6 +79,8 @@
                     android:textColor="@android:color/white" />
             </RelativeLayout>
 
+            <!-- Location Search Section -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="192dp"
@@ -86,40 +89,41 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/locationText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Car Number"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Enter Current Location"
                     android:textColor="@android:color/black"
                     android:textSize="22sp" />
 
                 <EditText
-                    android:id="@+id/referenceNumber"
-                    android:layout_width="180dp"
+                    android:id="@+id/locationEditText"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="31dp"
-                    android:layout_marginBottom="52dp"
-                    android:layout_toStartOf="@+id/submitReference"
-                    android:hint="Insert reference number"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textColorLink="#3c9b72"
-                    android:textSize="14sp" />
+                    android:layout_below="@id/locationText"
+                    android:layout_marginTop="12dp"
+                    android:hint="Enter location"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/darker_gray" />
 
                 <Button
-                    android:id="@+id/submitReference"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/searchParkingButton"
+                    android:layout_width="159dp"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginStart="127dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginBottom="50dp"
+                    android:layout_marginEnd="77dp"
+                    android:layout_marginBottom="26dp"
                     android:backgroundTint="#3C9B72"
-                    android:text="ENTER"
+                    android:text="SEARCH PARKING"
                     android:textColor="@android:color/white" />
             </RelativeLayout>
         </LinearLayout>

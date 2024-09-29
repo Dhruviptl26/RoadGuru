@@ -9,46 +9,97 @@
     android:orientation="vertical"
     tools:context=".UserDetails">
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="209dp"
-        android:layout_marginEnd="0dp"
-        android:text="Phone No "
-        android:textSize="34sp" />
+    <!-- User Profile Image -->
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/baseline_person_24"
+        android:padding="10dp" />
 
+    <!-- Name TextView -->
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="271dp"
-        android:layout_marginEnd="0dp"
-        android:text="TextView"
-        android:textSize="34sp" />
-
-    <Button
-        android:id="@+id/button2"
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="366dp"
-        android:text="LOgOUt" />
+        android:layout_below="@id/imageViewProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="John Doe"
+        android:textSize="26sp"
+        android:textColor="@android:color/black"
+    android:textStyle="bold"
+    android:padding="8dp"
+    android:gravity="center" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="129dp"
-        android:layout_height="126dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="140dp"
-        tools:srcCompat="@drawable/baseline_person_24" />
+    <!-- Email TextView -->
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="john.doe@example.com"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+    android:padding="8dp"
+    android:gravity="center" />
 
+    <!-- Phone TextView -->
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="123-456-7890"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+    android:padding="8dp"
+    android:gravity="center" />
+
+    <!-- Driving License TextView -->
+    <TextView
+        android:id="@+id/textViewDL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="DL12345678"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+    android:padding="8dp"
+    android:gravity="center" />
+
+    <!-- Address TextView -->
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewDL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="1234 Green Street"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+    android:padding="8dp"
+    android:gravity="center" />
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+    android:textSize="18sp" />
 </RelativeLayout>

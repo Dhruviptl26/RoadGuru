@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
 
         if (isLoggedIn) {
             // User is already logged in, redirect to UserDetails activity
-            Intent intent = new Intent(Login.this, UserDetails.class);
+            Intent intent = new Intent(Login.this, Registration.class);
             startActivity(intent);
             finish();  // Prevent going back to the login screen
             return;  // Stop further execution of onCreate
@@ -59,7 +59,7 @@ public class Login extends AppCompatActivity {
                     editor.putString("phoneNumber",emiratesId);
                     editor.putBoolean("isLoggedIn",true);
                     editor.apply();
-                    Intent intent = new Intent(Login.this,Home.class);
+                    Intent intent = new Intent(Login.this,Registration.class);
                     startActivity(intent);
                     finish();
                 }

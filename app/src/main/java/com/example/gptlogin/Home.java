@@ -1,5 +1,6 @@
 package com.example.gptlogin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,14 +25,14 @@ public class Home extends AppCompatActivity
     private EditText referenceNumber;
 
 
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        submitReference  = findViewById(R.id.submitReference);
+        submitReference  = findViewById(R.id.searchParkingButton);
         searchFineBtn = findViewById(R.id.searchFineButton);
-        referenceNumber = findViewById(R.id.referenceNumber);
 
         // Set up ActionBar with custom layout
         ActionBar actionBar = getSupportActionBar();
@@ -58,7 +59,7 @@ public class Home extends AppCompatActivity
                                 boolean isLoogedIn = sharedPreferences.getBoolean("isLoggedIn", false);
 
                                 if (isLoogedIn) {
-                                    Intent intent = new Intent(Home.this, UserDetails.class);
+                                    Intent intent = new Intent(Home.this, Registration.class);
                                     startActivity(intent);
                                 }
                                 else{
@@ -84,22 +85,10 @@ public class Home extends AppCompatActivity
 
         // Add click listener for the Search Fine button
         searchFineBtn.setOnClickListener(v -> {
-            String refNum = referenceNumber.getText().toString();
-            if (refNum.isEmpty()) {
-                Toast.makeText(Home.this, "Please insert a reference number", Toast.LENGTH_SHORT).show();
-            } else {
-                // Logic for searching fines with the reference number
-                Toast.makeText(Home.this, "Searching fines for reference: " + refNum, Toast.LENGTH_SHORT).show();
-            }
+
         });
         submitReference.setOnClickListener(v -> {
-            String refNum = referenceNumber.getText().toString();
-            if (refNum.isEmpty()) {
-                Toast.makeText(Home.this, "Please insert a car number", Toast.LENGTH_SHORT).show();
-            } else {
-                // Logic for searching fines with the reference number
-                Toast.makeText(Home.this, "Searching fines for reference: " + refNum, Toast.LENGTH_SHORT).show();
-            }
+
         });
 
         // Set up BottomNavigationView
