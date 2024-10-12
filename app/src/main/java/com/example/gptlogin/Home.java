@@ -17,23 +17,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity
 {
     private Button searchFineBtn,submitReference;
-    private EditText referenceNumber;
-
-
+    private EditText referenceNumber,locationInput;
+ private GoogleMap mMap;
+    int PERMISSION_ID=44;
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+       // fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
         submitReference  = findViewById(R.id.searchParkingButton);
         searchFineBtn = findViewById(R.id.searchFineButton);
-
+locationInput=findViewById(R.id.locationEditText);
         // Set up ActionBar with custom layout
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -88,7 +91,13 @@ public class Home extends AppCompatActivity
 
         });
         submitReference.setOnClickListener(v -> {
-
+            String location = locationInput.getText().toString();
+            if (!location.isEmpty()) {
+                // Logic to find nearest parking space using the entered location
+                findNearestParking(location);
+            } else {
+                Toast.makeText(this, "Please enter a location", Toast.LENGTH_SHORT).show();
+            }//checkPermissionsAndFindParking();
         });
 
         // Set up BottomNavigationView
@@ -117,4 +126,30 @@ public class Home extends AppCompatActivity
             }
         });
     }
-}
+    private void findNearestParking(String location) {
+        // Assuming you have a method to get location coordinates from the location string
+        Toast.makeText(this, "Could not find the location", Toast.LENGTH_SHORT).show();
+
+    }
+
+    }
+
+//        fusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+//            @Override
+//            public void onSuccess(Location location) {
+//                if (location != null) {
+//                    double latitude = location.getLatitude();
+//                    double longitude = location.getLongitude();
+//
+//                    // Placeholder toast for now
+//                    Toast.makeText(Home.this, "Latitude: " + latitude + ", Longitude: " + longitude, Toast.LENGTH_SHORT).show();
+//
+//                    // Here you can make a request to an API or use logic to find parking spaces nearby
+//                    // For example, integrate Google Places API to get parking spots based on the location
+//                } else {
+//                    Toast.makeText(Home.this, "Unable to get location", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+
