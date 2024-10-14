@@ -47,7 +47,7 @@ Button btn;
                 editor.apply();
                 Intent intent=new Intent(Registration.this, UserDetails.class);
                 startActivity(intent);
-                finish();
+
             }
         });
     }

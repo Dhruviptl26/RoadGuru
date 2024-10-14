@@ -17,26 +17,27 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Home extends AppCompatActivity
-{
-    private Button searchFineBtn,submitReference;
-    private EditText referenceNumber,locationInput;
- private GoogleMap mMap;
-    int PERMISSION_ID=44;
+public class Home extends AppCompatActivity {
+    private Button searchFineBtn, submitReference;
+    private EditText referenceNumber, locationInput;
+    private GoogleMap mMap;
+    int PERMISSION_ID = 44;
+    FusedLocationProviderClient mFusedLocationClient;
+
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-       // fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        // fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        submitReference  = findViewById(R.id.searchParkingButton);
+        submitReference = findViewById(R.id.searchParkingButton);
         searchFineBtn = findViewById(R.id.searchFineButton);
-locationInput=findViewById(R.id.locationEditText);
+
         // Set up ActionBar with custom layout
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -50,36 +51,34 @@ locationInput=findViewById(R.id.locationEditText);
 
                 // Set up click listeners for the icons
 
-                    ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
-                    ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
+                ImageView userIcon = customActionBarView.findViewById(R.id.lastUserIcon);
+                ImageView searchIcon = customActionBarView.findViewById(R.id.searchIcon);
 
-                    if (userIcon != null && searchIcon != null) {
-                        // Handle user icon click
-                        userIcon.setOnClickListener(new OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                SharedPreferences sharedPreferences = getSharedPreferences("userDetails", MODE_PRIVATE);
-                                boolean isLoogedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+                if (userIcon != null && searchIcon != null) {
+                    // Handle user icon click
+                    userIcon.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            SharedPreferences sharedPreferences = getSharedPreferences("userDetails", MODE_PRIVATE);
+                            boolean isLoogedIn = sharedPreferences.getBoolean("isLoggedIn", false);
 
-                                if (isLoogedIn) {
-                                    Intent intent = new Intent(Home.this, Registration.class);
-                                    startActivity(intent);
-                                }
-                                else{
-                                    Intent intent = new Intent(Home.this, Login.class);
-                                    startActivity(intent);
-                                }
+                            if (isLoogedIn) {
+                                Intent intent = new Intent(Home.this, Registration.class);
+                                startActivity(intent);
+                            } else {
+                                Intent intent = new Intent(Home.this, Login.class);
+                                startActivity(intent);
                             }
-                        });
-                        searchIcon.setOnClickListener(v ->
-                        {
-                            Toast.makeText(Home.this, "Search icon clicked", Toast.LENGTH_SHORT).show();
-                        });
-                    } else {
-                        Toast.makeText(this, "Icons not found", Toast.LENGTH_SHORT).show();
-                    }
+                        }
+                    });
+                    searchIcon.setOnClickListener(v ->
+                    {
+                        Toast.makeText(Home.this, "Search icon clicked", Toast.LENGTH_SHORT).show();
+                    });
+                } else {
+                    Toast.makeText(this, "Icons not found", Toast.LENGTH_SHORT).show();
                 }
-            else {
+            } else {
                 Toast.makeText(this, "Failed to inflate custom action bar", Toast.LENGTH_SHORT).show();
             }
         } else {
@@ -91,15 +90,9 @@ locationInput=findViewById(R.id.locationEditText);
 
         });
         submitReference.setOnClickListener(v -> {
-            String location = locationInput.getText().toString();
-            if (!location.isEmpty()) {
-                // Logic to find nearest parking space using the entered location
-                findNearestParking(location);
-            } else {
-                Toast.makeText(this, "Please enter a location", Toast.LENGTH_SHORT).show();
-            }//checkPermissionsAndFindParking();
+            Intent intent=new Intent(this, GoogleMapsActivity.class);
+            startActivity(intent);
         });
-
         // Set up BottomNavigationView
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -126,30 +119,6 @@ locationInput=findViewById(R.id.locationEditText);
             }
         });
     }
-    private void findNearestParking(String location) {
-        // Assuming you have a method to get location coordinates from the location string
-        Toast.makeText(this, "Could not find the location", Toast.LENGTH_SHORT).show();
-
-    }
-
-    }
-
-//        fusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
-//            @Override
-//            public void onSuccess(Location location) {
-//                if (location != null) {
-//                    double latitude = location.getLatitude();
-//                    double longitude = location.getLongitude();
-//
-//                    // Placeholder toast for now
-//                    Toast.makeText(Home.this, "Latitude: " + latitude + ", Longitude: " + longitude, Toast.LENGTH_SHORT).show();
-//
-//                    // Here you can make a request to an API or use logic to find parking spaces nearby
-//                    // For example, integrate Google Places API to get parking spots based on the location
-//                } else {
-//                    Toast.makeText(Home.this, "Unable to get location", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
 
 
+}
