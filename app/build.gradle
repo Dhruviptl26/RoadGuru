@@ -30,6 +30,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
@@ -41,8 +42,6 @@ dependencies {
     implementation libs.gridlayout
     implementation libs.firebase.inappmessaging
     implementation libs.play.services.maps
-
-
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
