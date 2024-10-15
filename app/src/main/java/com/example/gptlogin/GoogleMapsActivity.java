@@ -4,11 +4,14 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.gptlogin.databinding.ActivityGoogleMapsBinding;
@@ -39,13 +42,16 @@ private  GoogleApiClient googleApiClient;
 private LocationRequest locationRequest;
 private Location lastlocation;
 private Marker currentUserLocationMarker;
+public static final int Request_User_Location_Client = 99;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityGoogleMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
+    checkUserLocationPermission();
+}
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -56,13 +62,45 @@ private Marker currentUserLocationMarker;
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-           buldingApiClient();
+        if (ContextCompat.checkSelfPermission(this,  Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+           buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
     }
-    protected synchronized void buldingApiClient(){
+    public boolean checkUserLocationPermission(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+               if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
+                   ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},Request_User_Location_Client);
+               }else {
+                   ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},Request_User_Location_Client);
+               }
+               return  false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+      switch (requestCode){
+          case Request_User_Location_Client:
+              if(grantResults.length >0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                  if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+                     if(googleApiClient==null){
+                         buildGoogleApiClient();
+                     }
+                     mMap.setMyLocationEnabled(true);
+                  }
+              }else{
+                  Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
+              }
+              return;
+      }
+    }
+
+    protected synchronized void buildGoogleApiClient(){
         googleApiClient=new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -72,14 +110,14 @@ private Marker currentUserLocationMarker;
     @SuppressLint("MissingPermission")
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-locationRequest=new LocationRequest();
-locationRequest.setInterval(1100);
-locationRequest.setFastestInterval(1100);
-locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
-if(ActivityCompat.checkSelfPermission(this,  Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient,locationRequest,this);
+    locationRequest=new LocationRequest();
+    locationRequest.setInterval(1100);
+    locationRequest.setFastestInterval(1100);
+    locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+    if(ContextCompat.checkSelfPermission(this,  Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient,locationRequest,this);
+            }
         }
-    }
 
     @Override
     public void onConnectionSuspended(int i) {
@@ -93,10 +131,10 @@ if(ActivityCompat.checkSelfPermission(this,  Manifest.permission.ACCESS_FINE_LOC
 
     @Override
     public void onLocationChanged(@NonNull Location location) {
-lastlocation=location;
-if(currentUserLocationMarker != null){
-    currentUserLocationMarker.remove();
-}
+        lastlocation=location;
+            if(currentUserLocationMarker != null){
+             currentUserLocationMarker.remove();
+    }
         LatLng latLng=new LatLng(location.getLatitude(),location.getLongitude());
         MarkerOptions markerOptions=new MarkerOptions();
         markerOptions.position(latLng);
