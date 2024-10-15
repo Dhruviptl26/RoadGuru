@@ -42,6 +42,7 @@ dependencies {
     implementation libs.gridlayout
     implementation libs.firebase.inappmessaging
     implementation libs.play.services.maps
+    implementation libs.play.services.maps
     implementation libs.play.services.location
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
