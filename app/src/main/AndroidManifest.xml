@@ -34,7 +34,7 @@
         <activity
             android:name=".GoogleMapsActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".Registration"
             android:exported="false"

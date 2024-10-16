@@ -34,9 +34,14 @@ Button btn;
         dl=findViewById(R.id.editTextText5);
         add=findViewById(R.id.editTextTextPostalAddress);
         btn=findViewById(R.id.button);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String userName = name.getText().toString();
+                String userEmail = email.getText().toString();
+                String userDL = dl.getText().toString();
+                String userAddress = add.getText().toString();
                 SharedPreferences sp = getSharedPreferences("userDetails", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putBoolean("isRegistered", true);
@@ -45,6 +50,7 @@ Button btn;
                 editor.putString("dl", dl.getText().toString());
                 editor.putString("address", add.getText().toString());
                 editor.apply();
+                databaseHelper.addRegistrationInfo(userName, userEmail, userDL, userAddress);
                 Intent intent=new Intent(Registration.this, UserDetails.class);
                 startActivity(intent);
 

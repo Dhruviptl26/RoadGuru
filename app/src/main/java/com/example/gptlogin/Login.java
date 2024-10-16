@@ -69,7 +69,6 @@ public class Login extends AppCompatActivity {
            signInWithEmail.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-
                    Intent intent=new Intent(Login.this, gmail.class);
                    startActivity(intent);
                }
