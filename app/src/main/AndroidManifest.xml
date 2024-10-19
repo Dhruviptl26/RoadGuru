@@ -25,10 +25,12 @@
             android:exported="false" />
         <activity
             android:name=".licences"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".fineinquiry"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

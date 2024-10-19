@@ -26,7 +26,7 @@
             android:id="@+id/plate_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:backgroundTint="#3c9b22"
             android:gravity="center"
             android:padding="10dp"
             android:text="Plate"
@@ -37,11 +37,11 @@
             android:id="@+id/license_tab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:backgroundTint="#3c9b22"
             android:gravity="center"
             android:padding="10dp"
             android:text="License"
-            android:textColor="#3b9c22"
+            android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -60,7 +60,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44">
 
         <TextView
             android:id="@+id/enter_license_text"
@@ -113,7 +114,7 @@
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/black"
+            android:backgroundTint="#3c9b22"
             android:padding="10dp"
             android:text="Submit"
             android:textColor="#FFFFFF" />

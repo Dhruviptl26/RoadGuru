@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,13 +18,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Search Payment Section -->
-
             <!-- Enter Car Number Section -->
-
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="159dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/round_rect"
                 android:padding="16dp">
@@ -40,30 +36,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_above="@+id/searchFineButton"
                     android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginBottom="119dp"
+                    android:gravity="center"
                     android:text="Fine Payment"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/editTextText"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="36dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginBottom="52dp"
-                    android:layout_toStartOf="@+id/searchFineButton"
-                    android:hint="Enter"
-                    android:inputType="text"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textColorLink="#3c9b72" />
 
                 <Button
                     android:id="@+id/searchFineButton"
@@ -72,52 +50,51 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="13dp"
-                    android:layout_marginBottom="47dp"
+                    android:layout_marginEnd="153dp"
+                    android:layout_marginBottom="41dp"
                     android:backgroundTint="#3c9b72"
                     android:text="SEARCH"
                     android:textColor="@android:color/white" />
             </RelativeLayout>
 
-            <!-- Location Search Section -->
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="325dp"
-                android:background="@drawable/image_background"
-                android:clipToPadding="false"
-                android:elevation="4dp">
-
-            </RelativeLayout>
-
+            <!-- Nearest Parking Area Section -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="156dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
+                android:layout_height="490dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/round_rect"
                 android:padding="16dp">
+
+                <!-- Image Section for Parking -->
+
                 <TextView
-                    android:id="@+id/locationText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:text="Get Location"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="38dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image"
+                    android:text="Nearest Parking Area"
                     android:textColor="@android:color/black"
-                    android:textSize="22sp" />
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/parkingImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/image1" />
 
                 <Button
                     android:id="@+id/searchParkingButton"
-                    android:layout_width="211dp"
-                    android:layout_height="58dp"
-                    android:layout_alignParentStart="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="215dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="1dp"
-                    android:layout_marginBottom="6dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="27dp"
                     android:backgroundTint="#3C9B72"
                     android:text="SEARCH PARKING"
                     android:textColor="@android:color/white" />
