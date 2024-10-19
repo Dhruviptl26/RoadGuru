@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Gptlogin"
         tools:targetApi="31">
         <activity
+            android:name=".policecomplaint"
+            android:exported="false" />
+        <activity
             android:name=".licences"
             android:exported="false" />
         <activity

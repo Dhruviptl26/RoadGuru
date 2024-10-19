@@ -223,7 +223,7 @@
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:background="@drawable/gradiant_bg1"
-                    android:src="@drawable/medi" />
+                    android:src="@drawable/poli" />
 
                 <TextView
                     android:id="@+id/service_name_4"
@@ -231,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:paddingTop="8dp"
-                    android:text="Medical Services"
+                    android:text="Police Complain"
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
             </LinearLayout>

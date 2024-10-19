@@ -54,6 +54,8 @@ fine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(service.this,"fine clicked",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(service.this, policecomplaint.class);
+                startActivity(intent);
             }
         });
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
