@@ -51,16 +51,16 @@
     <!-- License Entry Form -->
     <LinearLayout
         android:id="@+id/input_area"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="324dp"
+        android:layout_height="215dp"
+        android:background="@drawable/round_rect"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/round_rect">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/enter_license_text"
@@ -74,12 +74,12 @@
 
         <!-- Dubai and License Number Entry -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="294dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:padding="8dp"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <!-- Dubai Text Field -->
             <EditText
@@ -97,10 +97,9 @@
             <!-- License Number Text Field -->
             <EditText
                 android:id="@+id/license_number"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:hint="License Number"
                 android:inputType="number"
@@ -114,10 +113,10 @@
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"
-            android:textColor="#FFFFFF"
             android:background="@android:color/black"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:text="Submit"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
