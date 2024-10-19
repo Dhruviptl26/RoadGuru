@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_gray"
+    tools:context=".fineinquiry">
+
+    <!-- Top TabLayout -->
+    <LinearLayout
+        android:id="@+id/top_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="18dp"
+        android:gravity="center"
+        android:background="@color/black"
+        android:weightSum="4"
+        tools:ignore="MissingConstraints">
+
+        <!-- Tab items -->
+        <Button
+            android:id="@+id/tab_plate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Plate"
+            android:textColor="#00FF00"
+            android:gravity="center"
+            android:textSize="16sp"
+            />
+
+        <Button
+            android:id="@+id/tab_license"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="License"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Box with Car background and inputs -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="@android:color/black"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_tab"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Instruction Text -->
+            <TextView
+                android:id="@+id/enter_plate_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please enter your plate details"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/input_area"
+                app:layout_constraintVertical_bias="0.4" />
+
+            <!-- Car Image (Background Image) -->
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.8"
+                android:alpha="0.2"
+                  android:src="@drawable/car"/>
+
+            <!-- Input fields (Code and Plate Number) -->
+            <LinearLayout
+                android:id="@+id/input_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/car_image"
+                app:layout_constraintVertical_bias="0.6"
+                android:background="@drawable/round_rect">
+
+                <!-- Code Input Field -->
+                <EditText
+                    android:id="@+id/edit_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Code"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:inputType="text"
+                    android:textColorHint="#999999" />
+                <!--                android:background="@drawable/input_box_background"-->
+
+                <!-- Plate Number Input Field -->
+                <EditText
+                    android:id="@+id/edit_plate_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Plate Number"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#999999"
+                    android:inputType="text" />
+                <!--                android:background="@drawable/input_box_background"-->
+
+            </LinearLayout>
+
+            <!-- Dubai Logo -->
+            <TextView
+                android:id="@+id/dubai_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="India"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/input_area"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

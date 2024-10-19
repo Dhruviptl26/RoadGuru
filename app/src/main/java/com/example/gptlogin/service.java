@@ -34,6 +34,8 @@ fine.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         Toast.makeText(service.this,"fine clicked",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(service.this, fineinquiry.class);
+        startActivity(intent);
     }
 });
         accident.setOnClickListener(new View.OnClickListener() {
