@@ -78,6 +78,8 @@ public class GoogleMapsActivity extends FragmentActivity implements
                     return true;
                 } else if (item.getItemId() == R.id.navigation_parking1) {
                         showNearbyPoliceStations();
+                } else if (item.getItemId()== id.navigation_parking2) {
+                    showNearbyHospitals();
                 } else {
                     return false;
                 }
@@ -384,7 +386,102 @@ public class GoogleMapsActivity extends FragmentActivity implements
             runOnUiThread(() -> Toast.makeText(GoogleMapsActivity.this, "Error parsing data", Toast.LENGTH_SHORT).show());
         }
     }
+    private void showNearbyHospitals() {
+        if (isLocationAvailable && lastlocation != null) {
+            double latitude = lastlocation.getLatitude();
+            double longitude = lastlocation.getLongitude();
+            String location = latitude + "," + longitude;
 
+            String apiKey = BuildConfig.MAPS_API_KEY; // Secure your API key
+            String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + location + "&radius=1500&type=hospital&key=" + apiKey;
 
+            new Thread(() -> {
+                try {
+                    URL requestUrl = new URL(url);
+                    HttpURLConnection connection = (HttpURLConnection) requestUrl.openConnection();
+                    connection.setRequestMethod("GET");
+                    connection.connect();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder jsonResponse = new StringBuilder();
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        jsonResponse.append(line);
+                    }
+
+                    reader.close();
+                    connection.disconnect();
+
+                    parseHospitalJson(jsonResponse.toString());
+                } catch (IOException e) {
+                    runOnUiThread(() -> Toast.makeText(GoogleMapsActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show());
+                }
+            }).start();
+        } else {
+            Toast.makeText(this, "Current location is not available", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void parseHospitalJson(String jsonResponse) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonResponse);
+            JSONArray results = jsonObject.getJSONArray("results");
+
+            runOnUiThread(() -> {
+                mMap.clear(); // Clear existing markers
+                if (results.length() == 0) {
+                    Toast.makeText(GoogleMapsActivity.this, "No hospitals found", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                for (int i = 0; i < results.length(); i++) {
+                    JSONObject hospital = null;
+                    try {
+                        hospital = results.getJSONObject(i);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    String name = null;
+                    try {
+                        name = hospital.getString("name");
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    JSONObject location = null;
+                    try {
+                        location = hospital.getJSONObject("geometry").getJSONObject("location");
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    double lat = 0;
+                    try {
+                        lat = location.getDouble("lat");
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    double lng = 0;
+                    try {
+                        lng = location.getDouble("lng");
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    LatLng latLng = new LatLng(lat, lng);
+                    MarkerOptions markerOptions = new MarkerOptions()
+                            .position(latLng)
+                            .title(name)
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
+                    mMap.addMarker(markerOptions);
+                }
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lastlocation.getLatitude(), lastlocation.getLongitude()), 14));
+            });
+        } catch (JSONException e) {
+            e.printStackTrace();
+            runOnUiThread(() -> Toast.makeText(GoogleMapsActivity.this, "Error parsing data", Toast.LENGTH_SHORT).show());
+        }
+    }
 }
 

@@ -8,4 +8,8 @@
         android:id="@+id/navigation_parking1"
         android:icon="@drawable/poli"
         android:title="Police Station "/>
+    <item
+        android:id="@+id/navigation_parking2"
+        android:icon="@drawable/hos"
+        android:title="Hospital "/>
 </menu>
