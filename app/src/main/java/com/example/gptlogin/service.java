@@ -6,12 +6,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.gridlayout.widget.GridLayout;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class service extends AppCompatActivity
@@ -23,7 +21,6 @@ public class service extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
         EdgeToEdge.enable(this);
-
         fine=findViewById(R.id.service_icon_1);
         accident=findViewById(R.id.service_icon_2);
         child=findViewById(R.id.service_icon_3);
@@ -33,7 +30,6 @@ public class service extends AppCompatActivity
 fine.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        Toast.makeText(service.this,"fine clicked",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(service.this, fineinquiry.class);
         startActivity(intent);
     }
@@ -85,7 +81,6 @@ fine.setOnClickListener(new View.OnClickListener() {
                     }
                 }
             });
-
     }
 
 
