@@ -17,6 +17,9 @@
         tools:ignore="ExtraText">
         android:layout_below="@id/toolbar"
         android:paddingTop="8dp" >
+
+
+
         <EditText
             android:id="@+id/location"
             android:layout_width="wrap_content"
@@ -28,6 +31,7 @@
             android:textColorLink="@color/accent_green" />
 
         <ImageButton
+            android:id="@+id/search_add"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
@@ -62,7 +66,8 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_parking"
         app:itemIconTint="@color/colorPrimary"
-        app:itemTextColor="@color/colorPrimary" />
+        app:itemTextColor="@color/colorPrimary"
+        android:background="@color/white"/>
 
 
 </RelativeLayout>

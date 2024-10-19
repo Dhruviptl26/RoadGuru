@@ -4,4 +4,8 @@
         android:id="@+id/navigation_parking"
         android:icon="@mipmap/carpar"
         android:title="Parking" />
+    <item
+        android:id="@+id/navigation_parking1"
+        android:icon="@drawable/poli"
+        android:title="Police Station "/>
 </menu>
