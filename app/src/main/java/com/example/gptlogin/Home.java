@@ -87,7 +87,8 @@ public class Home extends AppCompatActivity {
 
         // Add click listener for the Search Fine button
         searchFineBtn.setOnClickListener(v -> {
-
+            Intent intent=new Intent(this, fineinquiry.class);
+            startActivity(intent);
         });
         submitReference.setOnClickListener(v -> {
             Intent intent=new Intent(this, GoogleMapsActivity.class);

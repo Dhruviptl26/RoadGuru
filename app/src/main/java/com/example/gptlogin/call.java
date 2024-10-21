@@ -20,7 +20,6 @@ public class call extends AppCompatActivity {
 
             Button callEmergencyButton = findViewById(R.id.call_emergency);
             Button callCenterButton = findViewById(R.id.call_center);
-            // Button alAmeenButton = findViewById(R.id.al_ameen);
 
             callEmergencyButton.setOnClickListener(v -> {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -58,13 +57,6 @@ public class call extends AppCompatActivity {
                         return false;
                     }
                 }
-//        alAmeenButton.setOnClickListener(v -> {
-//            // Assuming this will open a web link or another activity
-//            // Modify as per your requirement
-//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.alameen.com"));
-//            startActivity(intent);
-//
-//        });
 
             });
 

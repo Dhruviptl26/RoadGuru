@@ -20,9 +20,7 @@
         app:title="Services"
         app:titleTextColor="@color/black" />
 
-    <!-- Content Section with rounded background -->
 
-    <!-- Service Grid and Title -->
     <LinearLayout
         android:id="@+id/content_layout"
         android:layout_width="368dp"
@@ -36,12 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-        <!-- Category Title -->
-
-        <!-- Category Name -->
-
-        <!-- Grid Layout for Service Items -->
 
         <TextView
             android:id="@+id/category_title"

@@ -5,19 +5,6 @@
     android:background="@drawable/first"
     android:padding="16dp">
 
-    <!-- User Icon -->
-
-    <!-- Welcome Text -->
-
-    <!-- Emirates ID Label -->
-
-    <!-- Emirates ID Input -->
-
-
-    <!-- Verify Button -->
-
-    <!-- OR Divider -->
-
     <ImageView
         android:id="@+id/userIcon"
         android:layout_width="64dp"

@@ -73,8 +73,6 @@ public class Login extends AppCompatActivity {
                    startActivity(intent);
                }
            });
-
-
     }
 
     private void loadPhoneNumber() {

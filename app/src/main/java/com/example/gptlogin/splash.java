@@ -21,14 +21,6 @@ public class splash extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             EdgeToEdge.enable(this);
             setContentView(R.layout.activity_splash);
-//            VideoView videoView=(VideoView)findViewById(R.id.vv);
-//            MediaController mediaController=new MediaController(this);
-//            mediaController.setAnchorView(videoView);
-//            Uri uri=Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.video);
-//            videoView.setMediaController(mediaController);
-//            videoView.setVideoURI(uri);
-//            videoView.requestFocus();
-//            videoView.start();
             im=(ImageView)findViewById(R.id.img);
             Animation animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadin);
             im.startAnimation(animZoomIn);
